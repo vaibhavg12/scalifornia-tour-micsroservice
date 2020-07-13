@@ -1,8 +1,8 @@
 package com.vb.lsb.california.tour.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Objects;
 
 /**
@@ -10,12 +10,11 @@ import java.util.Objects;
  *
  * @author Vaibhav Gupta
  */
-@Entity
+@Document
 public class TourPackage {
     @Id
     private String code;
 
-    @Column
     private String name;
 
     protected TourPackage() {

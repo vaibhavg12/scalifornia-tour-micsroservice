@@ -1,7 +1,8 @@
-package com.vb.lsb.california.tour.service;
+package com.vb.lsb.california.tour.service.internal;
 
 import com.vb.lsb.california.tour.model.TourPackage;
 import com.vb.lsb.california.tour.repository.TourPackageRepository;
+import com.vb.lsb.california.tour.service.TourPackageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,8 @@ public class TourPackageServiceImpl implements TourPackageService {
 
     @Override
     public TourPackage createTourPackage(String code, String name) {
-        return tourPackageRepository.findById(code).orElse(tourPackageRepository.save(new TourPackage(code, name)));
+        return tourPackageRepository.findById(code)
+                .orElse(tourPackageRepository.save(new TourPackage(code, name)));
     }
 
 

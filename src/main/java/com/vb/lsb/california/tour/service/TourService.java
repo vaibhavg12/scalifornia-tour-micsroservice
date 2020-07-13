@@ -1,9 +1,9 @@
 package com.vb.lsb.california.tour.service;
 
-import com.vb.lsb.california.tour.model.Difficulty;
-import com.vb.lsb.california.tour.model.Region;
 import com.vb.lsb.california.tour.model.Tour;
-import org.springframework.stereotype.Service;
+
+import java.util.Map;
+
 /**
  * Tour Service
  *
@@ -12,24 +12,14 @@ import org.springframework.stereotype.Service;
 public interface TourService {
 
     /**
-     * Create a new Tour Object and persist it to the Database.
+     * Create a new Tour Object and persist it to the Database
      *
-     * @param title title
-     * @param description description
-     * @param blurb blurb
-     * @param price price
-     * @param duration duration
-     * @param bullets bullets
-     * @param keywords keywords
-     * @param tourPackageName tour package name
-     * @param difficulty difficulty
-     * @param region region
-     * @return Tour Entity
+     * @param title Title of the tour
+     * @param tourPackageName tour Package of the tour
+     * @param details Extra details about the tour
+     * @return Tour
      */
-    Tour createTour(String title, String description, String blurb, Integer price,
-            String duration, String bullets,
-            String keywords, String tourPackageName, Difficulty difficulty, Region region);
-
+    Tour createTour(String title, String tourPackageName, Map<String, String> details);
 
     /**
      * Calculate the number of Tours in the Database.
