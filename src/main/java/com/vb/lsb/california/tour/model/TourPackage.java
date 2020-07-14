@@ -3,6 +3,8 @@ package com.vb.lsb.california.tour.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -10,8 +12,9 @@ import java.util.Objects;
  *
  * @author Vaibhav Gupta
  */
+@Table(name="tour_package")
 @Entity
-public class TourPackage {
+public class TourPackage implements Serializable {
     @Id
     private String code;
 

@@ -1,6 +1,5 @@
 package com.vb.lsb.california.tour.web;
-
-import com.vb.lsb.california.tour.model.TourRating;
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -12,7 +11,8 @@ import javax.validation.constraints.Size;
  *
  * @author Vaibhav Gupta
  */
-public class RatingDto {
+
+public class RatingDto extends ResourceSupport {
 
     @Min(0)
     @Max(5)
@@ -25,21 +25,13 @@ public class RatingDto {
     private Integer customerId;
 
     /**
-     * Construct a RatingDto from a fully instantiated TourRating.
-     *
-     * @param tourRating Tour Rating Object
-     */
-    public RatingDto(TourRating tourRating) {
-        this(tourRating.getScore(), tourRating.getComment(), tourRating.getPk().getCustomerId());
-    }
-    /**
      * Constructor to fully initialize the RatingDto
      *
-     * @param score score 1-5
+     * @param score score
      * @param comment comment
      * @param customerId customer identifier
      */
-    private RatingDto(Integer score, String comment, Integer customerId) {
+    public RatingDto(Integer score, String comment, Integer customerId) {
         this.score = score;
         this.comment = comment;
         this.customerId = customerId;
