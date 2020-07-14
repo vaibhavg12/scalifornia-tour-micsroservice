@@ -65,7 +65,7 @@ public class TourRatingController {
     @ResponseStatus(HttpStatus.CREATED)
     public void createManyTourRatings(@PathVariable(value = "tourId") int tourId,
             @PathVariable(value = "score") int score,
-            @RequestParam("customers") Integer customers[]) {
+            @RequestParam("customers") Integer[] customers) {
         LOGGER.info("POST /tours/{}/ratings/{}", tourId, score);
         tourRatingService.rateMany(tourId, score, customers);
     }

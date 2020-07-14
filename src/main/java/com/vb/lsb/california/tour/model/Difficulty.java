@@ -7,5 +7,5 @@ package com.vb.lsb.california.tour.model;
  * @author Vaibhav Gupta
  */
 public enum Difficulty {
-    Easy, Medium, Difficult, Varies;
+    Easy, Medium, Difficult, Varies
 }
