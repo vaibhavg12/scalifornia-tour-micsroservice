@@ -1,4 +1,5 @@
 package com.vb.lsb.california.tour.web;
+
 import org.springframework.hateoas.ResourceSupport;
 
 import javax.validation.constraints.Max;
@@ -27,8 +28,8 @@ public class RatingDto extends ResourceSupport {
     /**
      * Constructor to fully initialize the RatingDto
      *
-     * @param score score
-     * @param comment comment
+     * @param score      score
+     * @param comment    comment
      * @param customerId customer identifier
      */
     public RatingDto(Integer score, String comment, Integer customerId) {
@@ -37,26 +38,27 @@ public class RatingDto extends ResourceSupport {
         this.customerId = customerId;
     }
 
-    protected RatingDto() {}
+    protected RatingDto() {
+    }
 
     public Integer getScore() {
         return score;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public Integer getCustomerId() {
-        return customerId;
     }
 
     public void setScore(Integer score) {
         this.score = score;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
     }
 
     public void setCustomerId(Integer customerId) {

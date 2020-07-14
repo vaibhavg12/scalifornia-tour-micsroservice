@@ -1,6 +1,7 @@
 package com.vb.lsb.california.tour.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Objects;
  * @author Vaibhav Gupta
  */
 @Entity
-public class Tour {
+public class Tour implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -37,7 +38,7 @@ public class Tour {
 
 
     @ManyToOne
-    @JoinColumn(name="tour_package_code")
+    @JoinColumn(name = "tour_package_code")
     private TourPackage tourPackage;
 
     @Column
@@ -48,7 +49,7 @@ public class Tour {
     private Region region;
 
     public Tour(String title, String description, String blurb, Integer price, String duration, String bullets,
-                String keywords, TourPackage tourPackage, Difficulty difficulty, Region region) {
+            String keywords, TourPackage tourPackage, Difficulty difficulty, Region region) {
         this.title = title;
         this.description = description;
         this.blurb = blurb;
@@ -145,6 +146,7 @@ public class Tour {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, blurb, price, duration, bullets, keywords, tourPackage, difficulty, region);
+        return Objects.hash(id, title, description, blurb, price, duration, bullets, keywords, tourPackage,
+                difficulty, region);
     }
 }

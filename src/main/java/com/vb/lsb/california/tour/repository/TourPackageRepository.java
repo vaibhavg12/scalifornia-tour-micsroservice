@@ -13,6 +13,7 @@ import java.util.Optional;
  *
  * @author Vaibhav Gupta
  */
+
 @RepositoryRestResource(collectionResourceRel = "packages", path = "packages")
 public interface TourPackageRepository extends CrudRepository<TourPackage, String> {
 

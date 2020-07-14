@@ -17,10 +17,10 @@ public interface TourRatingService {
     /**
      * Create a new Tour Rating in the database
      *
-     * @param tourId tour identifier
+     * @param tourId     tour identifier
      * @param customerId customer identifier
-     * @param score score of the tour rating
-     * @param comment additional comment
+     * @param score      score of the tour rating
+     * @param comment    additional comment
      * @throws NoSuchElementException if no Tour found.
      */
     void createNew(int tourId, Integer customerId, Integer score, String comment) throws NoSuchElementException;
@@ -43,7 +43,7 @@ public interface TourRatingService {
     /**
      * Get a page of tour ratings for a tour.
      *
-     * @param tourId tour identifier
+     * @param tourId   tour identifier
      * @param pageable page parameters to determine which elements to fetch
      * @return Page of TourRatings
      * @throws NoSuchElementException if no Tour found.
@@ -53,8 +53,8 @@ public interface TourRatingService {
     /**
      * Update some of the elements of a Tour Rating.
      *
-     * @param tourId tour identifier
-     * @param score score of the tour rating
+     * @param tourId  tour identifier
+     * @param score   score of the tour rating
      * @param comment additional comment
      * @return Tour Rating Domain Object
      * @throws NoSuchElementException if no Tour found.
@@ -64,10 +64,10 @@ public interface TourRatingService {
     /**
      * Update all of the elements of a Tour Rating.
      *
-     * @param tourId tour identifier
+     * @param tourId     tour identifier
      * @param customerId customer identifier
-     * @param score score of the tour rating
-     * @param comment additional comment
+     * @param score      score of the tour rating
+     * @param comment    additional comment
      * @return Tour Rating Domain Object
      * @throws NoSuchElementException if no Tour found.
      */
@@ -77,7 +77,7 @@ public interface TourRatingService {
     /**
      * Delete a Tour Rating.
      *
-     * @param tourId tour identifier
+     * @param tourId     tour identifier
      * @param customerId customer identifier
      * @throws NoSuchElementException if no Tour found.
      */
@@ -90,7 +90,7 @@ public interface TourRatingService {
      * @return average score as a Double.
      * @throws NoSuchElementException
      */
-    Double getAverageScore(int tourId)  throws NoSuchElementException;
+    Double getAverageScore(int tourId) throws NoSuchElementException;
 
     /**
      * Service for many customers to give the same score for a service
@@ -100,4 +100,14 @@ public interface TourRatingService {
      * @param customers
      */
     void rateMany(int tourId, int score, Integer[] customers);
+
+    /**
+     * Verify and return the TourRating for a particular tourId and Customer
+     *
+     * @param tourId
+     * @param customerId
+     * @return the found TourRating
+     * @throws NoSuchElementException if no TourRating found
+     */
+    TourRating verifyTourRating(int tourId, int customerId) throws NoSuchElementException;
 }
