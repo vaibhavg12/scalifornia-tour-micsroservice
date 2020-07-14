@@ -23,8 +23,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Central Coast',
     'Hiking, National Parks, Big Sur'
   );
+  insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
 
-insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
   (
    'BC',
     'In the Steps of John Muir',
@@ -37,8 +37,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Northern California',
     'Hiking, National Parks, Yosemite, John Muir, Camping'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
    'BC',
     'The Death Valley Survivor''s Trek',
@@ -51,8 +51,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Varies',
     'Hiking, Desert, Camping, Mojave, Death Valley'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
    'BC',
     'The Mt. Whitney Climbers Tour',
@@ -77,8 +77,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Southern California',
     'Channel Islands, Boating, Whale watching, Hiking'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
     'CC',
     'Day Spa Package',
@@ -115,8 +115,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Southern California',
     'Spa, Relaxation, Art, Yoga'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
     'CH',
     'Avila Beach Hot springs',
@@ -129,8 +129,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Central Coast',
     'Hot springs, hiking, cabin, beach, kayaking, hiking'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
     'CH',
     'Matilija Hot springs',
@@ -143,8 +143,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Central Coast',
     'Hot springs, Ojai, hiking, swimming, rustic, nature'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
     'CH',
     'Paso Robles Artesian Spring',
@@ -157,8 +157,8 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
     'Central Coast',
     'Hot springs, Spa treatment, Bed and breakfast'
   );
-
   insert into tour  (tour_package_code, title, description, blurb, bullets, difficulty, duration, price, region, keywords) values
+
   (
     'CY',
     'Amgen Tour of California Special',
@@ -419,3 +419,23 @@ insert into tour  (tour_package_code, title, description, blurb, bullets, diffic
   (1, 11, 1, 'We hated it'),
   (2, 100, 5, 'I really thought it could have been better');
 
+
+-- USER
+-- hashed password: letmein
+INSERT INTO security_user (id, username, password, first_name, last_name) VALUES
+(1,  'admin', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Administrator', 'Adminstrator'),
+(2,  'csr_jane', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Jane', 'Doe'),
+(3,  'csr_mark', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Mark', 'Smith'),
+(4,  'wally', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Walter', 'Adams');
+
+-- ROLES
+
+INSERT INTO security_role (id, role_name, description) VALUES (1, 'ROLE_ADMIN', 'Administrator');
+INSERT INTO security_role (id, role_name, description) VALUES (2, 'ROLE_CSR', 'Customer Service Representative');
+
+INSERT INTO user_role(user_id, role_id) VALUES
+ (1, 1), -- give admin ROLE_ADMIN
+ (2, 2),  -- give Jane ROLE_CSR
+ (3, 2),  -- give Mark ROLE_CSR
+ (4, 1),  -- give Wally ROLE_ADMIN
+ (4, 2);  -- give Wally ROLE_CSR

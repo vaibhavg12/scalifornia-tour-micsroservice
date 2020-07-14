@@ -1,9 +1,5 @@
-package com.vb.lsb.california.tour.domain;
+package com.vb.lsb.california.tour.model;
 
-import com.vb.lsb.california.tour.model.Difficulty;
-import com.vb.lsb.california.tour.model.Region;
-import com.vb.lsb.california.tour.model.Tour;
-import com.vb.lsb.california.tour.model.TourPackage;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
